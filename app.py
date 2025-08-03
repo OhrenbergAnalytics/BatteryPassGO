@@ -21,7 +21,7 @@ st.markdown("""
     <style>
     /* Logo-Größe kleiner & linksbündig */
     div[data-testid="stSidebarHeader"] img, div[data-testid="collapsedControl"] img {
-        height: 80px !important;
+        height: 60px !important;
         width: auto;
         margin-left: 0 !important;
         margin-top: 20px !important;  /* Oberer Rand über dem Logo */
@@ -664,6 +664,7 @@ with col_next:
     if st.button("ㅤㅤ**Next**ㅤㅤ", disabled=st.session_state.current_page == list(pages)[-1]):
         st.session_state.go_next = True
         st.rerun()
+
 
 
 
