@@ -6,7 +6,6 @@ textColor = "black"
 font = "inter"
 codeBackgroundColor = "white"
 primaryColor = "#00CC2D"
-buttonRadius = "0.3rem"  # z. B. eckiger statt "full"
 
 [theme.sidebar]
 backgroundColor = "#F2F2F2"
