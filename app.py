@@ -16,16 +16,6 @@ st.markdown("""
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 """, unsafe_allow_html=True)
 
-st.markdown(
-    """
-<style>
-    [data-testid="collapsedControl"] {
-        display: none
-    }
-</style>
-""",
-    unsafe_allow_html=True,
-)
 
 st.markdown("""
     <style>
@@ -674,6 +664,7 @@ with col_next:
     if st.button("ㅤㅤ**Next**ㅤㅤ", disabled=st.session_state.current_page == list(pages)[-1]):
         st.session_state.go_next = True
         st.rerun()
+
 
 
 
