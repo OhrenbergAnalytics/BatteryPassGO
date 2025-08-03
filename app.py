@@ -29,13 +29,11 @@ st.markdown("""
             
     }
 
-    /* Optional: Sidebar-Header zentrieren */
-    div[data-testid="stSidebarHeader"],
-    div[data-testid="collapsedControl"] {
+    /* Sidebar-Header ausrichten */
+    div[data-testid="stSidebarHeader"], div[data-testid="collapsedControl"] {
         display: flex;
-        justify-content: center !important;
-        align-items: center !important;
-        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;  /* Links ausrichten */
     }
     </style>
 """, unsafe_allow_html=True)
@@ -664,6 +662,7 @@ with col_next:
     if st.button("ㅤㅤ**Next**ㅤㅤ", disabled=st.session_state.current_page == list(pages)[-1]):
         st.session_state.go_next = True
         st.rerun()
+
 
 
 
