@@ -20,7 +20,7 @@ st.markdown("""
     <style>
     /* Logo-Größe kleiner & linksbündig */
     div[data-testid="stSidebarHeader"] img, div[data-testid="collapsedControl"] img {
-        height: 80px !important;
+        height: 100px !important;
         width: auto;
         margin-left: 0 !important;
         margin-top: 20px !important;  /* Oberer Rand über dem Logo */
@@ -28,11 +28,13 @@ st.markdown("""
             
     }
 
-    /* Sidebar-Header ausrichten */
-    div[data-testid="stSidebarHeader"], div[data-testid="collapsedControl"] {
+    /* Optional: Sidebar-Header zentrieren */
+    div[data-testid="stSidebarHeader"],
+    div[data-testid="collapsedControl"] {
         display: flex;
-        align-items: center;
-        justify-content: flex-start;  /* Links ausrichten */
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -661,4 +663,5 @@ with col_next:
     if st.button("ㅤㅤ**Next**ㅤㅤ", disabled=st.session_state.current_page == list(pages)[-1]):
         st.session_state.go_next = True
         st.rerun()
+
 
