@@ -121,7 +121,7 @@ for key, label in pages.items():
     st.sidebar.markdown(f"{icon} {label}")
 
 st.sidebar.markdown("---")
-if st.sidebar.button("ㅤㅤ🗑️ Reset all inputsㅤㅤ"):
+if st.sidebar.button("ㅤ🗑️ Reset all inputsㅤ"):
     preserved = ["current_page"]
     for key in list(st.session_state.keys()):
         if key not in preserved:
