@@ -647,6 +647,12 @@ elif st.session_state.current_page == "summary":
     st.write(f"Round trip efficiency (50% life): **{form_data.get('efficiency_midlife', 'n/a')} %**")
 
     st.markdown("---")
+    st.subheader("Materials")
+    st.write(f"Battery Chemistry: **{form_data.get('battery_chemistry', "-")}**")
+    st.write(f"Critical Raw Materials: **{form_data.get('critical_raw_materials', "-")}**")
+    st.write(f"Hazardous Substances: **{form_data.get('hazardous_substances', "-")}**")
+    
+    st.markdown("---")
     st.subheader("Circularity")
     st.write(f"Recycled share for Lithium: **{form_data.get('recycled_share_li', 0)} %**")
     st.write(f"Recycled share for Nickel: **{form_data.get('recycled_share_ni', 0)} %**")
