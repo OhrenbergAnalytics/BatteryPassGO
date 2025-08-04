@@ -88,9 +88,9 @@ def prepare_data_values(form_data):
         {"value": f"{form_data.get('warranty_period', 0)} years", "dataSectionId": "45822c0e-3568-43ac-a893-393d64da43df", "dataFieldId": "b5d8337e-6a9c-4b77-aeeb-84efd97a72c9", "row": 0},
 
         # Cell Chemistry
-        {"value": "LiFePO4", "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "ceab99fa-92fc-4c2f-bb8b-099a560ceccc", "row": 0},
-        {"value": "Lithium", "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "94b8e4ea-313a-4bc4-90bf-fd52c4079ffb", "row": 0},
-        {"value": "LiPF6", "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "558c824c-b873-4693-9a84-273e190ffff5", "row": 0},
+        {"value": form_data.get("battery_chemistry", "-"), "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "ceab99fa-92fc-4c2f-bb8b-099a560ceccc", "row": 0},
+        {"value": form_data.get("critical_raw_materials", "-"), "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "94b8e4ea-313a-4bc4-90bf-fd52c4079ffb", "row": 0},
+        {"value": form_data.get("hazardous_substances", "-"), "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "558c824c-b873-4693-9a84-273e190ffff5", "row": 0},
         {"value": "May cause fire or explosion; harmful to fertility and unborn child. Irritates eyes, skin, and respiratory system; Dangerous to the environment; Highly flammable", "dataSectionId": "8fb09db8-c8b9-4d6e-8382-ef703046f1fe", "dataFieldId": "cc8a8be5-46c8-40d6-a876-729a9b670e61", "row": 0},
 
         # Electrical Specifications
