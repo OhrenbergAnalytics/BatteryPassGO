@@ -359,12 +359,12 @@ elif st.session_state.current_page == "cell":
 
     st.markdown("---")
     st.subheader("Materials")
-    st.write(f"battery_chemistry: **{battery_chemistry}**")
-    st.write(f"critical_raw_materials: **{critical_raw_materials}**")
-    st.write(f"hazardous_substances: **{hazardous_substances}**")
-    st.write(f"anode_composition: **{anode_composition}**")
-    st.write(f"cathode_composition: **{cathode_composition}**")
-    st.write(f"electrolyte_composition: **{electrolyte_composition}**")
+    st.write(f"Battery Chemistry: **{battery_chemistry}**")
+    st.write(f"Critical raw materials: **{critical_raw_materials}**")
+    st.write(f"Hazardous Substances: **{hazardous_substances}**")
+    st.write(f"Anode Composition: **{anode_composition}**")
+    st.write(f"Cathode Composition: **{cathode_composition}**")
+    st.write(f"Electrolyte Composition: **{electrolyte_composition}**")
 
     st.markdown("---")
     st.subheader("Circularity")
