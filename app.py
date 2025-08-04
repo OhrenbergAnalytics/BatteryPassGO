@@ -648,8 +648,16 @@ elif st.session_state.current_page == "summary":
     st.write(f"Component part numbers: **{form_data.get('component_part_numbers', 'n/a')}**")
     
     st.markdown("---")
-    if st.button("Create Battery Passport @ open-dpp"):
-        create_model_and_upload_data(form_data)
+
+    # Schritt 1: API-Key eingeben
+    api_token = st.text_input("🔑 Enter your open-dpp API token", type="password")
+
+    # Schritt 2: Button nur anzeigen, wenn API-Key vorhanden ist
+    if api_token:
+        if st.button("✅ Create Battery Passport @ open-dpp"):
+            create_model_and_upload_data(form_data, api_token)
+    else:
+        st.info("Please enter your API token to proceed.")
     
 
 
@@ -666,6 +674,7 @@ with col_next:
     if st.button("ㅤㅤ**Next**ㅤㅤ", disabled=st.session_state.current_page == list(pages)[-1]):
         st.session_state.go_next = True
         st.rerun()
+
 
 
 
