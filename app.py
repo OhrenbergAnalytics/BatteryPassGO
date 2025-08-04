@@ -3,6 +3,7 @@ import pandas as pd
 import re
 import os
 from pathlib import Path
+from api import create_model_and_upload_data
 
 
 # --- Global Style ---
@@ -645,7 +646,10 @@ elif st.session_state.current_page == "summary":
     st.write(f"E-Mail: **{form_data.get('email', 'n/a')}**")
     st.write(f"Web address: **{form_data.get('web_address', 'n/a')}**")
     st.write(f"Component part numbers: **{form_data.get('component_part_numbers', 'n/a')}**")
-
+    
+    st.markdown("---")
+    if st.button("Create Battery Passport @ open-dpp"):
+        create_model_and_upload_data(form_data)
     
 
 
@@ -662,6 +666,7 @@ with col_next:
     if st.button("ㅤㅤ**Next**ㅤㅤ", disabled=st.session_state.current_page == list(pages)[-1]):
         st.session_state.go_next = True
         st.rerun()
+
 
 
 
