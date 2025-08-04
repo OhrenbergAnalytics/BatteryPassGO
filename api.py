@@ -15,7 +15,7 @@ def create_model_and_upload_data(form_data, api_token):
     }
     # --- Schritt 1: Modell anlegen ---
     model_payload = {
-        "name": f"{form_data.get('manufacturer_id', 'Unnamed Battery')}- {form_data.get('cell_model', '')}- {form_data.get('nominal_voltage_pack', '')}V- {int(round(form_data.get('capacity_pack', 0) / 1000))}Ah",
+        "name": f"{form_data.get('manufacturer_id', 'Unnamed Battery')}- {form_data.get('cell_model', '')}- {form_data.get('nominal_voltage_pack', 0):.1f}V- {form_data.get('capacity_pack', 0) / 1000:.1f}Ah",
         "description": f"{form_data.get('battery_category', 'Battery')} - {form_data.get('cell_model', '')}",
         "templateId": template_id
     }
@@ -126,5 +126,6 @@ def prepare_data_values(form_data):
         {"value": f"{form_data.get('co2_percent_recycling_pack', '-') } %", "dataSectionId": "a4181719-e51d-45b7-b984-972df7edfb4f", "dataFieldId": "1046dfb4-2e39-4713-9409-0e49674b19fd", "row": 0},
 
     ]
+
 
 
