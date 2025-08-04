@@ -2,9 +2,9 @@ import requests
 import streamlit as st
 import json
 
-def create_model_and_upload_data(form_data):
+def create_model_and_upload_data(form_data, api_token):
     # --- Konfiguration ---
-    api_token = "39877680-38b9-4bc5-88f9-1776b5d856eb"
+    api_token = api_token
     base_url = "https://api.cloud.open-dpp.de"
     organization_id = "2aeb51ad-5bd8-4769-a0f6-e18c7a8e9f11"
     template_id = "8f3bc7f4-337b-46bb-a8fc-fc9a32444a86"
@@ -124,4 +124,5 @@ def prepare_data_values(form_data):
         {"value": f"{form_data.get('co2_percent_production_pack', '-') } %", "dataSectionId": "a4181719-e51d-45b7-b984-972df7edfb4f", "dataFieldId": "2f83d410-38d7-4273-be9b-d9227d1e53bc", "row": 0},
         {"value": f"{form_data.get('co2_percent_distribution_pack', '-') } %", "dataSectionId": "a4181719-e51d-45b7-b984-972df7edfb4f", "dataFieldId": "7b9781ce-4b8a-4166-9ac6-ebd8e0e442c4", "row": 0},
         {"value": f"{form_data.get('co2_percent_recycling_pack', '-') } %", "dataSectionId": "a4181719-e51d-45b7-b984-972df7edfb4f", "dataFieldId": "1046dfb4-2e39-4713-9409-0e49674b19fd", "row": 0},
+
     ]
