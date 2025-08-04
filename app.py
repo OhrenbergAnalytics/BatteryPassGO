@@ -266,6 +266,15 @@ elif st.session_state.current_page == "cell":
 
     power_continuous_pack = cell["Power continous [W]"] * p
 
+
+    #Materials
+    battery_chemistry = cell["Battery chemistry"]
+    critical_raw_materials = cell["Critical raw materials"]
+    hazardous_substances = cell["Hazardous substances"]
+    anode_composition = cell["Anode Composition"]
+    cathode_composition = cell["Cathode Composition"]
+    electrolyte_composition = cell["Electrolyte Composition"]
+
     # -----------------------------
     # [2] SPEICHERN IN SESSION_STATE
     # -----------------------------
@@ -295,6 +304,14 @@ elif st.session_state.current_page == "cell":
 
         "cycles": cycles,
         "total_energy_fu": total_energy_fu,
+
+        "battery_chemistry": battery_chemistry,
+        "critical_raw_materials": critical_raw_materials,
+        "hazardous_substances": hazardous_substances,
+        "anode_composition": anode_composition,
+        "cathode_composition": cathode_composition,
+        "electrolyte_composition": electrolyte_composition,
+
 
         "recycled_share_li": cell.get("Recycled share for Lithium", 0),
         "recycled_share_ni": cell.get("Recycled share for Nickel", 0),
@@ -340,7 +357,14 @@ elif st.session_state.current_page == "cell":
     st.write(f"Internal cell resistance: **{cell['Internal resistance [Ω]']} Ω**")
     st.write(f"Internal pack resistance: **{resistance_pack} Ω**")
 
-    
+    st.markdown("---")
+    st.subheader("Materials")
+    st.write(f"battery_chemistry: **{cell.get('battery_chemistry', 0)}**")
+    st.write(f"critical_raw_materials: **{cell.get('critical_raw_materials', 0)}**")
+    st.write(f"hazardous_substances: **{cell.get('hazardous_substances', 0)}**")
+    st.write(f"anode_composition: **{cell.get('anode_composition', 0)}**")
+    st.write(f"cathode_composition: **{cell.get('cathode_composition', 0)}**")
+    st.write(f"electrolyte_composition: **{cell.get('electrolyte_composition', 0)}**")
 
     st.markdown("---")
     st.subheader("Circularity")
