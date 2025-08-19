@@ -242,7 +242,9 @@ elif st.session_state.current_page == "cell":
     co2_materials_cell = cell["CO2 Materials [CO2eq kg]"] * total_cell
     co2_production_cell = cell["CO2 Cell Production [CO2eq kg]"] * total_cell
     co2_distribution_cell = cell["CO2 Distribution [CO2eq kg]"] * total_cell
-    co2_recycling_cell = 0.0  # aktuell nicht in Datenbank, daher 0 annehmen
+    co2_recycling_cell = cell["CO2 End of Life [CO2eq kg]"] * total_cell
+
+    
 
     co2_total_cell = co2_materials_cell + co2_production_cell + co2_distribution_cell
    
